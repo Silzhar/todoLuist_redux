@@ -19,6 +19,7 @@ const variants = {
 };
 
 const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
+const works = ['Tareas urgentes', 'Tareas pendientes', 'Tareas terminadas', 'Próximos eventos', 'Notas']
 
 export const MenuItem = ({ i }) => {
   const style = { border: `2px solid ${colors[i]}` };
@@ -29,7 +30,7 @@ export const MenuItem = ({ i }) => {
       whileTap={{ scale: 0.95 }}
     >
       <div className="icon-placeholder" style={style} />
-      <div className="text-placeholder" style={style} />
+      <div className="text-placeholder" style={style} >{works[i]}</div>
     </motion.li>
   );
 };
