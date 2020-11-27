@@ -1,5 +1,6 @@
 import * as React from "react";
 import { motion } from "framer-motion";
+import { Link } from 'react-router-dom'
 
 const variants = {
   open: {
@@ -19,7 +20,13 @@ const variants = {
 };
 
 const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
-const works = ['Tareas urgentes', 'Tareas pendientes', 'Tareas terminadas', 'Próximos eventos', 'Notas']
+const works = [
+    <Link to="/urgentes" >Tareas urgentes</Link>,
+    <Link to="/pendientes" >Tareas pendientes</Link>,
+    <Link to="/terminadas" >Tareas terminadas</Link>,
+    <Link to="/eventos" >Próximos eventos</Link>,
+    <Link to="/notas" >Notas</Link>
+    ]
 
 export const MenuItem = ({ i }) => {
   const style = { border: `2px solid ${colors[i]}` };
