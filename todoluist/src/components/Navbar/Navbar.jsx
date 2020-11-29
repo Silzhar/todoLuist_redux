@@ -1,17 +1,10 @@
 import * as React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
 
-
-import { useRef } from "react";
-import { motion, useCycle } from "framer-motion";
-import { useDimensions } from "./use-dimensions";
-import { MenuToggle } from "./MenuToggle";
-import { Navigation } from "./Navigation";
-import {
-    //Selectors.
-    selectUrgentStatus,
-    //Actions.
-} from '../../features/navbarSlice'
+import { useRef } from "react"
+import { motion, useCycle } from "framer-motion"
+import { useDimensions } from "./use-dimensions"
+import { MenuToggle } from "./MenuToggle"
+import { Navigation } from "./Navigation"
 
 import './Navbar.scss';
 
@@ -36,9 +29,7 @@ const sidebar = {
 };
 
 export function Navbar() {
-    const dispatch = useDispatch()
-
-    const urgentOpen  = useSelector(selectUrgentStatus)
+    
     const [isOpen, toggleOpen] = useCycle(false, true);
     const containerRef = useRef(null);
     const { height } = useDimensions(containerRef);

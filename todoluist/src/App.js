@@ -5,8 +5,11 @@ import { Mainpage } from './components/Mainpage'
 import { Navbar } from './components/Navbar'
 import { UrgentTask } from './components/UrgentTask/UrgentTask'
 import { RemainingTask } from './components/RemainingTask'
+import { CompletTask } from './components/CompletTask/CompletTask'
+import { Events } from './components/Events/Events'
+import { Notes } from './components/Notes/Notes'
 
-import './App.css';
+import './App.css'
 
 function App() {
   return (
@@ -20,22 +23,12 @@ function App() {
 
         <Route path='/remaining'  exact component={RemainingTask}/>
 
-        <Route path='/complet' exact render={() => (
-            <Mainpage title='Tareas completadas'/>
-          )}
-        />
+        <Route path='/complet' exact component={CompletTask}/>
 
-        <Route path='/events' exact render={() => (
-            <Mainpage title='Próximos eventos'/>
-          )}
-        />
+        <Route path='/events' exact component={Events}/>
 
-            <Route path='/notes' exact render={() => (
-              <Mainpage title='Notas'/>
-            )}
-          />
-
-        </Switch>
+        <Route path='/notes' exact component={Notes}/>
+      </Switch>
       
     </div>
     </Router>    
