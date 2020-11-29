@@ -2,10 +2,11 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import { Mainpage } from './components/Mainpage'
-import { Navbar } from './components/Navbar';
+import { Navbar } from './components/Navbar'
+import { UrgentTask } from './components/UrgentTask/UrgentTask'
+import { RemainingTask } from './components/RemainingTask'
 
 import './App.css';
-import UrgentTask from './components/UrgentTask/UrgentTask';
 
 function App() {
   return (
@@ -17,9 +18,7 @@ function App() {
 
         <Route path='/urgent' exact component={UrgentTask}/>
 
-        <Route path='/remaining'  exact render={() => (
-            <UrgentTask/>
-          )}/>
+        <Route path='/remaining'  exact component={RemainingTask}/>
 
         <Route path='/complet' exact render={() => (
             <Mainpage title='Tareas completadas'/>

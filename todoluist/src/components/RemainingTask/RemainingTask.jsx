@@ -1,9 +1,9 @@
 import React from 'react'
 
-export function UrgentTask() {
+export function RemainingTask() {
     return (
         <div>
-            <h1>Tareas urgentes</h1>
+            <h1>Tareas pendientes</h1>
         </div>
     )
 }
