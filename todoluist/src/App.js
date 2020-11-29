@@ -5,26 +5,34 @@ import { Mainpage } from './components/Mainpage'
 import { Navbar } from './components/Navbar';
 
 import './App.css';
+import UrgentTask from './components/UrgentTask/UrgentTask';
 
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className='App'>
       <Navbar />
-      
       <Switch>
-          <Route path="/complet" exact render={() => (
-              <Mainpage title="Tareas completadas"/>
-            )}
-          />
+        <Route path='/' exact component={Mainpage}/>
 
-          <Route path="/urgent" exact render={() => (
-              <Mainpage title="Tareas urgentes"/>
-            )}
-          />
+        <Route path='/urgent' exact component={UrgentTask}/>
 
-          <Route path="/" exact render={() => (
-              <Mainpage title="Tareas pendientes"/>
+        <Route path='/remaining'  exact render={() => (
+            <UrgentTask/>
+          )}/>
+
+        <Route path='/complet' exact render={() => (
+            <Mainpage title='Tareas completadas'/>
+          )}
+        />
+
+        <Route path='/events' exact render={() => (
+            <Mainpage title='Próximos eventos'/>
+          )}
+        />
+
+            <Route path='/notes' exact render={() => (
+              <Mainpage title='Notas'/>
             )}
           />
 

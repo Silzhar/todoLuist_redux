@@ -21,11 +21,11 @@ const variants = {
 
 const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
 const works = [
-    <Link to="/urgentes" >Tareas urgentes</Link>,
-    <Link to="/pendientes" >Tareas pendientes</Link>,
-    <Link to="/terminadas" >Tareas terminadas</Link>,
-    <Link to="/eventos" >Próximos eventos</Link>,
-    <Link to="/notas" >Notas</Link>
+    <Link to='/urgent' >Tareas urgentes</Link>,
+    <Link to='/remaining' >Tareas pendientes</Link>,
+    <Link to='/complet' >Tareas completadas</Link>,
+    <Link to='/events' >Próximos eventos</Link>,
+    <Link to='/notes' >Notas</Link>
     ]
 
 export const MenuItem = ({ i }) => {
