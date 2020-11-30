@@ -4,21 +4,30 @@ export const cardSlice = createSlice({
     name: 'card',
 
     initialState: {
-        createCard: false,
+        createCard: [],
+        card: {
+            title: '',
+            description: '',
+        }
     },
 
     reducers: {
-        newTask: (state) => {
-            state.createCard = !state.createCard
-        }
+        createTask: (state, action) => {
+            const { title, description } = state.card
+            state.createCard.push({ title, description })
+
+        },
     }
 
 })
 
 // Actions.
-export const { newTask } = cardSlice.actions
+export const { createTask } = cardSlice.actions
 
 //Selectors.
-export const selectCreateCard = (state) => state.createCard
+export const selectCreateCard = (state) => state.card.createCard
+export const selectTitle = (state) => state.card.title
+export const selectDescription = (state) => state.card.description
+
 
 export default cardSlice.reducer

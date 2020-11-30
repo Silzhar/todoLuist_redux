@@ -4,7 +4,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import {
     // Selectors.
     selectCreateCard,
+    selectTitle,
+    selectDescription,
+
     // Actions.
+    createTask,
 } from '../../features/cardSlice'
 
 import './Card.scss'
@@ -13,6 +17,8 @@ export function Card() {
     const dispatch = useDispatch()
 
     const createCard = useSelector(selectCreateCard)
+    const title = useSelector(selectTitle)
+    const desciption = useSelector(selectDescription)
     
     return (
         <div className="CardInput">
@@ -20,21 +26,20 @@ export function Card() {
             type="text"
             name="title"
             placeholder="Título"
-            value=''
-            onChange=''
+            value={title}
             />
+
             <input
             type="text"
             name="description"
             placeholder="Descripción"
-            value=''
-            onChange=''
+            value={desciption}  
             />
 
 
             <div className="CardInput__buttons">
             <button
-                onClick={() => (createCard())}
+                onClick={() => dispatch(createTask())}
                 // disabled={() => ()}
                 className="CardInput__add-button"
             >
