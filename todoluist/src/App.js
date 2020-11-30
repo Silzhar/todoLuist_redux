@@ -21,7 +21,7 @@ function App() {
 
         <Route path='/urgent' exact component={UrgentTask}/>
 
-        <Route path='/remaining'  exact component={RemainingTask}/>
+        <Route path='/remaining' exact component={RemainingTask}/>
 
         <Route path='/complet' exact component={CompletTask}/>
 

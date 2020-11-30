@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { navbarSlice } from '../features/navbarSlice';
+import { cardSlice } from '../features/cardSlice';
 
 export default configureStore({
   reducer: {
-    navbar: navbarSlice
+    card: cardSlice
   },
 })
