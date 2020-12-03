@@ -9,6 +9,7 @@ import {
 
     // Actions.
     createTask,
+    changeFormValue
 } from '../../features/cardSlice'
 
 import './Card.scss'
@@ -22,8 +23,18 @@ export function Card() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        dispatch(createCard());
-      }
+        dispatch(createTask());
+    }
+
+    function handleChangeInput(ev) {
+    dispatch(
+        changeFormValue({
+        name: ev.target.name,
+        value: ev.target.value,
+        })
+    );
+    }
+    
     
     
     return (
@@ -34,19 +45,20 @@ export function Card() {
                 name="title"
                 placeholder="Título"
                 value={title}
+                onChange={handleChangeInput}
                 />
 
                 <input
                 type="text"
                 name="description"
                 placeholder="Descripción"
-                value={desciption}  
+                value={desciption}
+                onChange={handleChangeInput}
                 />
 
 
                 <div className="CardInput__buttons">
-                <button
-                    onClick={() => dispatch(createTask())}
+                <button type='submit'
                     // disabled={() => ()}
                     className="CardInput__add-button"
                 >
