@@ -75,6 +75,7 @@ export function Card() {
                     Cancelar
                 </button>
                 </div>
+
             </form>  
         </div>
     )

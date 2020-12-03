@@ -9,6 +9,7 @@ export const cardSlice = createSlice({
             title: '',
             description: '',
         },
+        drawCreateCard: false,
     },
 
     reducers: {
@@ -20,8 +21,7 @@ export const cardSlice = createSlice({
                 title: '',
                 description: '',
             }
-            // state.task.title = ''
-            // state.task.desciption = ''
+            state.drawCreateCard = true
         },
         // I define the behaviour of each gearbox launched 
         // by an action and configure the new status.
@@ -43,6 +43,7 @@ export const { createTask, changeFormValue } = cardSlice.actions
 export const selectCreateCard = (state) => state.card.createCard
 export const selectTitle = (state) => state.card.task.title
 export const selectDescription = (state) => state.card.task.description
+export const selectDrawCreateCard = (state) => state.drawCreateCard
 
 
 export default cardSlice.reducer
