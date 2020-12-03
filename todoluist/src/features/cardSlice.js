@@ -16,14 +16,18 @@ export const cardSlice = createSlice({
             const { title, description } = state.task
             state.createCard.push({ title, description })
             // Reset states.
-            state.task.title = ''
-            state.task.desciption = ''
+            state.task =  {
+                title: '',
+                description: '',
+            }
+            // state.task.title = ''
+            // state.task.desciption = ''
         },
         // I define the behaviour of each gearbox launched 
         // by an action and configure the new status.
         changeFormValue: (state, action) => {
-            const { payload } = action;
-            const { name, value } = payload;
+            const { payload } = action
+            const { name, value } = payload
       
             state.task[name] = value;
           },
