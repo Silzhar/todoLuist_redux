@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import {
     // Selectors.
-    selectCreateCard,
+    // selectCreateCard,
     selectTitle,
     selectDescription,
 
@@ -17,13 +17,13 @@ import './Card.scss'
 export function Card() {
     const dispatch = useDispatch()
 
-    const createCard = useSelector(selectCreateCard)
+    // const createCard = useSelector(selectCreateCard)
     const title = useSelector(selectTitle)
     const desciption = useSelector(selectDescription)
 
     function handleSubmit(event) {
-        event.preventDefault();
-        dispatch(createTask());
+        event.preventDefault()
+        dispatch(createTask())
     }
 
     function handleChangeInput(ev) {
@@ -34,7 +34,6 @@ export function Card() {
         })
     );
     }
-    
     
     
     return (

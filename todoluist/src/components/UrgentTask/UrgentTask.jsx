@@ -14,17 +14,18 @@ import './UrgentTask.scss'
 export function UrgentTask() {
     const createCard = useSelector(selectCreateCard)
     const drawCreateCard = useSelector(selectDrawCreateCard)
-
+    
     return (
         <div>
             <h1>Tareas urgentes</h1>
             <Card />
 
-            {drawCreateCard !== false ? (
+            {drawCreateCard  ? (
                     <div className="task">
-                        <h1>createCard !</h1>
+                        {createCard}
                     </div>
                 ): null}
         </div>
+        
     )
 }
