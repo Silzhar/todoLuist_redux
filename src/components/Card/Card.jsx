@@ -3,21 +3,28 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import {
     // Selectors.
-    // selectCreateCard,
+    selectCreateCard,
     selectTitle,
     selectDescription,
 
     // Actions.
     createTask,
     changeFormValue
-} from '../../features/cardSlice'
+    } from '../../features/cardSlice'
+
+import {
+    // Selectors.
+
+    // Actions.
+    valuesUrgentTask
+    } from '../../features/urgentTaskSlice'
 
 import './Card.scss'
 
 export function Card() {
     const dispatch = useDispatch()
 
-    // const createCard = useSelector(selectCreateCard)
+    const createCard = useSelector(selectCreateCard)
     const title = useSelector(selectTitle)
     const desciption = useSelector(selectDescription)
 
@@ -33,6 +40,12 @@ export function Card() {
         value: ev.target.value,
         })
     );
+    }
+
+    function pushCard() {
+        if (true) {
+            dispatch(valuesUrgentTask(createCard))
+        }
     }
     
     
@@ -58,6 +71,7 @@ export function Card() {
 
                 <div className="CardInput__buttons">
                 <button type='submit'
+                    onClick={() => (dispatch(pushCard))}
                     // disabled={() => ()}
                     className="CardInput__add-button"
                 >

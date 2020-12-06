@@ -1,8 +1,11 @@
-import { configureStore } from '@reduxjs/toolkit';
-import cardSlice from '../features/cardSlice';
+import { configureStore } from '@reduxjs/toolkit'
+import cardSlice from '../features/cardSlice'
+import  urgentTaskSlice  from '../features/urgentTaskSlice'
+
 
 export default configureStore({
   reducer: {
-    card: cardSlice
+    card: cardSlice,
+    urgentTask: urgentTaskSlice
   },
 })

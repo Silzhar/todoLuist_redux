@@ -16,6 +16,7 @@ export const cardSlice = createSlice({
         createTask: (state, action) => {
             const { title, description } = state.task
             state.createCard.push({ title, description })
+
             // Reset states.
             state.task =  {
                 title: '',
