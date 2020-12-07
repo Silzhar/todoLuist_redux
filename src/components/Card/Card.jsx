@@ -14,7 +14,7 @@ import {
 
 import {
     // Selectors.
-
+    // selectCreateCardurgent,
     // Actions.
     valuesUrgentTask
     } from '../../features/urgentTaskSlice'
@@ -23,10 +23,13 @@ import './Card.scss'
 
 export function Card() {
     const dispatch = useDispatch()
-
+    // carSlice.
     const createCard = useSelector(selectCreateCard)
     const title = useSelector(selectTitle)
     const desciption = useSelector(selectDescription)
+    //  urgentTaskSlice.
+    // const createCardUrgent = useSelector(selectCreateCardurgent)
+
 
     function handleSubmit(event) {
         event.preventDefault()
@@ -38,15 +41,16 @@ export function Card() {
         changeFormValue({
         name: ev.target.name,
         value: ev.target.value,
-        })
-    );
+        }),
+        );
     }
 
-    function pushCard() {
-        if (true) {
-            dispatch(valuesUrgentTask(createCard))
-        }
-    }
+    // function pushCard() {
+    //     const valuesCreateCard = createCard
+    //     let valuesUrgentCreateCard = createCardUrgent
+    //     valuesUrgentCreateCard = valuesCreateCard
+    //     dispatch(valuesUrgentTask(valuesUrgentCreateCard))
+    // }
     
     
     return (
@@ -71,7 +75,7 @@ export function Card() {
 
                 <div className="CardInput__buttons">
                 <button type='submit'
-                    onClick={() => (dispatch(pushCard))}
+                    onClick={() => (dispatch(valuesUrgentTask(createCard)))}
                     // disabled={() => ()}
                     className="CardInput__add-button"
                 >

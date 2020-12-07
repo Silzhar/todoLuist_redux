@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+
 export const urgentTaskSlice = createSlice ({
     name: 'urgentTask',
 
@@ -10,7 +11,10 @@ export const urgentTaskSlice = createSlice ({
 
     reducers: {
         valuesUrgentTask: (state, action) => {
-            state.createCardUrgent = action.payload
+            // const urgentValues = action.payload
+            // state.createCardUrgent = action.payload
+            const values = state.createCard
+            state.createCardUrgent = values
         }
     }
 })
