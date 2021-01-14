@@ -6,7 +6,7 @@ import {
     selectCreateCard,
     selectTitle,
     selectDescription,
-
+    selectDrawCreateCard,
     // Actions.
     createTask,
     changeFormValue
@@ -27,6 +27,7 @@ export function Card() {
     const createCard = useSelector(selectCreateCard)
     const title = useSelector(selectTitle)
     const desciption = useSelector(selectDescription)
+    const drawCreateCard = useSelector(selectDrawCreateCard)
     //  urgentTaskSlice.
     // const createCardUrgent = useSelector(selectCreateCardurgent)
 
@@ -92,8 +93,13 @@ export function Card() {
                     Cancelar
                 </button>
                 </div>
-
-            </form>  
+                {!drawCreateCard  ? (
+                    <div className="task">
+                        <h3>h3 card.jsx</h3>
+                      <p>{createCard}</p>
+                    </div>
+                ): null}
+            </form> 
         </div>
     )
 }
