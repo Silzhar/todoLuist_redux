@@ -35,9 +35,10 @@ export function UrgentTask() {
             <form onSubmit={handleSubmit} className="CardInput">
 
             </form>
-            {drawCreateCard  ? (
+            {!drawCreateCard  ? (
                     <div className="task">
-                        {createCard}
+                        <h3>h3 urgentask</h3>
+                      <p>{createCard}</p>
                     </div>
                 ): null}
         </div>
