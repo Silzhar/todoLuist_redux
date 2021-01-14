@@ -32,7 +32,7 @@ export function UrgentTask() {
         <div>
             <h1>Tareas urgentes</h1>
             <Card />
-            <form onSubmit={handleSubmit} className="CardInput">
+            <form onSubmit={handleSubmit} className="urgentTaskInput">
 
             </form>
             {!drawCreateCard  ? (

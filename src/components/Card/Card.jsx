@@ -93,12 +93,6 @@ export function Card() {
                     Cancelar
                 </button>
                 </div>
-                {!drawCreateCard  ? (
-                    <div className="task">
-                        <h3>h3 card.jsx</h3>
-                      <p>{createCard}</p>
-                    </div>
-                ): null}
             </form> 
         </div>
     )

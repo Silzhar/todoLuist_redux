@@ -17,10 +17,8 @@ export const cardSlice = createSlice({
 
     reducers: {
         createTask: (state, action) => {
-            const title = state.title
-            const description = state.description
-            state.createCard.push(title)
-            state.createCard.push(description)
+            const { title, description } = state.task
+            state.createCard.push( title, description )
 
 
             // Reset states.
@@ -36,7 +34,7 @@ export const cardSlice = createSlice({
             const { payload } = action
             const { name, value } = payload
       
-            state.task[name] = value;
+            state.task[name] = value
           },
       
     }
