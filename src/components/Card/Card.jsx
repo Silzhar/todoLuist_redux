@@ -44,15 +44,7 @@ export function Card() {
         value: ev.target.value,
         }),
         );
-    }
-
-    // function pushCard() {
-    //     const valuesCreateCard = createCard
-    //     let valuesUrgentCreateCard = createCardUrgent
-    //     valuesUrgentCreateCard = valuesCreateCard
-    //     dispatch(valuesUrgentTask(valuesUrgentCreateCard))
-    // }
-    
+    } 
     
     return (
         <div>
