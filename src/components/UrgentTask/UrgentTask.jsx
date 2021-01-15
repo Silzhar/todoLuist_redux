@@ -37,8 +37,9 @@ export function UrgentTask() {
             </form>
             {!drawCreateCard  ? (
                     <div className="task">
-                        <h3>h3 urgentask</h3>
                       <p>{createCard}</p>
+                      <p>{createCard[0]} -- {createCard[1]}</p>
+                      <p>{createCard[2]} -- {createCard[3]}</p>
                     </div>
                 ): null}
         </div>
