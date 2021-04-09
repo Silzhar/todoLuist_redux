@@ -1,8 +1,11 @@
 .CardInput {
   display: flex;
+  align-items: center;
   padding: 2rem;
   box-shadow: 10px 9px 39px -3px #fbfafabf;
-  width: 80%;
+  width: 70%;
+  margin-right:auto;
+  margin-left: auto;
 
     > input {
       width: 100%;
@@ -16,9 +19,7 @@
     }
   
     &__buttons {
-      // display: flex;
-      align-items: center;
-      // justify-content: space-between;
+      // align-items: center;
   
       > button {
         cursor: pointer;
@@ -27,12 +28,15 @@
     }
   
     &__add-button {
-      width: 12rem;
-      background-color: aqua;
+      width: 10rem;
+      background-color: transparent;
       color: black;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       padding: 0.5rem 1rem;
       border-radius: 0.40rem;
+      border: 2px solid aqua;
+      margin: 0.4rem;
+
   
       &:disabled {
         background-color: grey;
@@ -40,12 +44,12 @@
     }
   
     &__cancel-button {
-      width: 12rem;
-      background-color: hsl(0, 7%, 94%);
+      width: 10rem;
+      background-color: transparent;
       color: grey;
       font-size: 1rem;
       padding: 0.5rem 1rem;
-      // border: 2px solid #ff00c8;
+      border: 2px solid #b401eb71;
       border-radius: 0.40rem;
   
       &:enabled {
