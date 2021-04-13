@@ -34,13 +34,12 @@ export function UrgentTask() {
       <Card />
       <form onSubmit={handleSubmit} className="urgentTaskInput"></form>
       {!drawCreateCard ? (
-        <div className="task">
-          {/* <p>{createCard}</p> */}
-          <div>
+        <div>
+          <div className="task">
             <p className="task__title">{createCard[0]}</p>
             <p className="task__description">{createCard[1]}</p>
           </div>
-          <div>
+          <div className="task">
             <p className="task__title">{createCard[2]}</p>
             <p className="task__description">{createCard[3]}</p>
           </div>
