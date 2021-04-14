@@ -14,7 +14,7 @@ export const urgentTaskSlice = createSlice ({
             // const urgentValues = action.payload
             // state.createCardUrgent = action.payload
             const values = state.createCard
-            state.createCardUrgent = values
+            state.createCardUrgent.push(values)
         }
     }
 })

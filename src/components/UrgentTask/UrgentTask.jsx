@@ -6,6 +6,7 @@ import {
   // Selectors.
   selectCreateCard,
   selectDrawCreateCard,
+  selectCardList,
   // Actions.
 } from '../../features/cardSlice';
 
@@ -23,6 +24,7 @@ export function UrgentTask() {
 
   const createCard = useSelector(selectCreateCard);
   const drawCreateCard = useSelector(selectDrawCreateCard);
+  const cardList = useSelector(selectCardList)
 
   function handleSubmit() {
     dispatch(valuesUrgentTask(createCard));
@@ -33,19 +35,17 @@ export function UrgentTask() {
       <h1>Tareas urgentes</h1>
       <Card />
       <form onSubmit={handleSubmit} className="urgentTaskInput"></form>
-      {!drawCreateCard ? (
-        <div>
-          <div className="task">
+      {createCard[0] ? (
+        <div className="task">
             <p className="task__title">{createCard[0]}</p>
             <p className="task__description">{createCard[1]}</p>
-          </div>
+        </div>) : null }
+      {createCard[2] ? (
           <div className="task">
             <p className="task__title">{createCard[2]}</p>
             <p className="task__description">{createCard[3]}</p>
           </div>
-
-          {/* <p>{createCard[2]} -- {createCard[3]}</p> */}
-        </div>
+          
       ) : null}
     </div>
   );
