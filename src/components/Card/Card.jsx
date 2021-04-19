@@ -64,7 +64,7 @@ export function Card() {
         <div className="CardInput__buttons">
           <button
             type="submit"
-            onClick={() => dispatch(valuesUrgentTask(createCard))}
+            onClick={() => dispatch(createTask())}
             className="CardInput__add-button"
           >
             Nueva tarea
