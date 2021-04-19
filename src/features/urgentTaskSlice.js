@@ -11,8 +11,6 @@ export const urgentTaskSlice = createSlice ({
 
     reducers: {
         valuesUrgentTask: (state, action) => {
-            // const urgentValues = action.payload
-            // state.createCardUrgent = action.payload
             const values = state.createCard
             state.createCardUrgent.push(values)
         }
