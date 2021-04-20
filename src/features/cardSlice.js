@@ -7,7 +7,7 @@ export const cardSlice = createSlice({
     createCard: [],
     createdUrgentCard: [],
     remainingCard: [],
-    list: [],
+    eventsCard: [],
     task: {
       title: '',
       description: '',
@@ -40,7 +40,6 @@ export const cardSlice = createSlice({
         title: '',
         description: '',
       };
-      state.list.length = 0;
       state.drawCreateCard = true;
     },
     createRemainingTask: (state, action) => {
@@ -52,7 +51,17 @@ export const cardSlice = createSlice({
         title: '',
         description: '',
       };
-      state.list.length = 0;
+      state.drawCreateCard = true;
+    },
+    createNextEvents: (state, action) => {
+      const { title, description } = state.task;
+      state.eventsCard.push(title, description);
+
+      // Reset states.
+      state.task = {
+        title: '',
+        description: '',
+      };
       state.drawCreateCard = true;
     },
     // I define the behaviour of each gearbox launched
@@ -71,6 +80,7 @@ export const {
   createTask,
   createUrgentTask,
   createRemainingTask,
+  createNextEvents,
   changeFormValue,
 } = cardSlice.actions;
 
@@ -78,6 +88,8 @@ export const {
 export const selectCreateCard = (state) => state.card.createCard;
 export const selectCreatedUrgentCard = (state) => state.card.createdUrgentCard;
 export const selectCreatedRemainingCard = (state) => state.card.remainingCard;
+export const selectCreatedeventsCard = (state) => state.card.eventsCard;
+
 
 export const selectTitle = (state) => state.card.task.title;
 export const selectDescription = (state) => state.card.task.description;
