@@ -1,5 +1,4 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux'
 
 import {
   // Selectors.
@@ -9,18 +8,18 @@ import {
   // Actions.
   createUrgentTask,
   changeFormValue,
-} from '../../features/cardSlice';
+} from '../../features/cardSlice'
 
 
 
-import './UrgentTask.scss';
+import './UrgentTask.scss'
 
 export function UrgentTask() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
-  const createdUrgentCard = useSelector(selectCreatedUrgentCard);
-  const title = useSelector(selectTitle);
-  const desciption = useSelector(selectDescription);
+  const createdUrgentCard = useSelector(selectCreatedUrgentCard)
+  const title = useSelector(selectTitle)
+  const desciption = useSelector(selectDescription)
  
 
   function handleSubmit(event) {
@@ -33,7 +32,7 @@ export function UrgentTask() {
         name: ev.target.name,
         value: ev.target.value,
       })
-    );
+    )
   }
 
   return (
@@ -137,5 +136,5 @@ export function UrgentTask() {
           </div>  
       ) : null}
     </div>
-  );
+  )
 }
