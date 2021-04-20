@@ -1,11 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-// import { Card } from '../Card';
 import {
   // Selectors.
   selectCreatedUrgentCard,
-  selectCardList,
   selectTitle,
   selectDescription,
   // Actions.
@@ -13,12 +11,7 @@ import {
   changeFormValue,
 } from '../../features/cardSlice';
 
-import {
-  // Selectors.
-  // selectcreatedUrgentCardurgent,
-  // Actions.
-  valuesUrgentTask,
-} from '../../features/urgentTaskSlice';
+
 
 import './UrgentTask.scss';
 
@@ -28,13 +21,10 @@ export function UrgentTask() {
   const createdUrgentCard = useSelector(selectCreatedUrgentCard);
   const title = useSelector(selectTitle);
   const desciption = useSelector(selectDescription);
-  // const urgentTask = useSelector(selectCreatedUrgentCard)
-  // const drawcreatedUrgentCard = useSelector(selectDrawcreatedUrgentCard);
-  const cardList = useSelector(selectCardList)
+ 
 
   function handleSubmit(event) {
     event.preventDefault();
-    // dispatch(valuesUrgentTask(createdUrgentCard));
     dispatch(createUrgentTask());
   }
   function handleChangeInput(ev) {
@@ -49,7 +39,6 @@ export function UrgentTask() {
   return (
     <div>
       <h1>Tareas urgentes</h1>
-      {/* <Card /> */}
       <div>
       <form onSubmit={handleSubmit} className="CardInput">
         <input
