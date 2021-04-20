@@ -1,20 +1,21 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { Card } from '../Card';
+// import { Card } from '../Card';
 import {
   // Selectors.
-  selectCreateCard,
-  selectDrawCreateCard,
   selectCreatedUrgentCard,
   selectCardList,
+  selectTitle,
+  selectDescription,
   // Actions.
   createUrgentTask,
+  changeFormValue,
 } from '../../features/cardSlice';
 
 import {
   // Selectors.
-  // selectCreateCardurgent,
+  // selectcreatedUrgentCardurgent,
   // Actions.
   valuesUrgentTask,
 } from '../../features/urgentTaskSlice';
@@ -24,85 +25,126 @@ import './UrgentTask.scss';
 export function UrgentTask() {
   const dispatch = useDispatch();
 
-  const createCard = useSelector(selectCreateCard);
-  const urgentTask = useSelector(selectCreatedUrgentCard)
-  const drawCreateCard = useSelector(selectDrawCreateCard);
+  const createdUrgentCard = useSelector(selectCreatedUrgentCard);
+  const title = useSelector(selectTitle);
+  const desciption = useSelector(selectDescription);
+  // const urgentTask = useSelector(selectCreatedUrgentCard)
+  // const drawcreatedUrgentCard = useSelector(selectDrawcreatedUrgentCard);
   const cardList = useSelector(selectCardList)
 
   function handleSubmit(event) {
     event.preventDefault();
-    // dispatch(valuesUrgentTask(createCard));
+    // dispatch(valuesUrgentTask(createdUrgentCard));
     dispatch(createUrgentTask());
+  }
+  function handleChangeInput(ev) {
+    dispatch(
+      changeFormValue({
+        name: ev.target.name,
+        value: ev.target.value,
+      })
+    );
   }
 
   return (
     <div>
       <h1>Tareas urgentes</h1>
-      <Card />
+      {/* <Card /> */}
+      <div>
+      <form onSubmit={handleSubmit} className="CardInput">
+        <input
+          type="text"
+          name="title"
+          placeholder="Título"
+          value={title}
+          onChange={handleChangeInput}
+        />
+
+        <input
+          type="text"
+          name="description"
+          placeholder="Descripción"
+          value={desciption}
+          onChange={handleChangeInput}
+        />
+
+        <div className="CardInput__buttons">
+          <button
+            type="submit"
+            onClick={() => dispatch(createUrgentTask())}
+            className="CardInput__add-button"
+          >
+            Nueva tarea
+          </button>
+
+          <button className="CardInput__cancel-button">Cancelar</button>
+        </div>
+      </form>
+    </div>
       <form onSubmit={handleSubmit} className="urgentTaskInput"></form>
-      {createCard[0] ? (
+      {createdUrgentCard[0] ? (
         <div className="task">
-            <p className="task__title">{createCard[0]}</p>
-            <p className="task__description">{createCard[1]}</p>
+            <p className="task__title">{createdUrgentCard[0]}</p>
+            <p className="task__description">{createdUrgentCard[1]}</p>
         </div>) : null }
-      {createCard[2] ? (
+      {createdUrgentCard[2] ? (
           <div className="task">
-            <p className="task__title">{createCard[2]}</p>
-            <p className="task__description">{createCard[3]}</p>
+            <p className="task__title">{createdUrgentCard[2]}</p>
+            <p className="task__description">{createdUrgentCard[3]}</p>
           </div>  
       ) : null}
-      {createCard[4] ? (
+      {createdUrgentCard[4] ? (
           <div className="task">
-            <p className="task__title">{createCard[4]}</p>
-            <p className="task__description">{createCard[5]}</p>
+            <p className="task__title">{createdUrgentCard[4]}</p>
+            <p className="task__description">{createdUrgentCard[5]}</p>
           </div>  
       ) : null}
-      {createCard[6] ? (
+      {createdUrgentCard[6] ? (
           <div className="task">
-            <p className="task__title">{createCard[6]}</p>
-            <p className="task__description">{createCard[7]}</p>
+            <p className="task__title">{createdUrgentCard[6]}</p>
+            <p className="task__description">{createdUrgentCard[7]}</p>
           </div>  
       ) : null}
-      {createCard[8] ? (
+      {createdUrgentCard[8] ? (
           <div className="task">
-            <p className="task__title">{createCard[8]}</p>
-            <p className="task__description">{createCard[9]}</p>
+            <p className="task__title">{createdUrgentCard[8]}</p>
+            <p className="task__description">{createdUrgentCard[9]}</p>
           </div>  
       ) : null}
-      {createCard[10] ? (
+      {createdUrgentCard[10] ? (
           <div className="task">
-            <p className="task__title">{createCard[10]}</p>
-            <p className="task__description">{createCard[11]}</p>
+            <p className="task__title">{createdUrgentCard[10]}</p>
+            <p className="task__description">{createdUrgentCard[11]}</p>
           </div>  
       ) : null}
-      {createCard[12] ? (
+      {createdUrgentCard[12] ? (
           <div className="task">
-            <p className="task__title">{createCard[12]}</p>
-            <p className="task__description">{createCard[13]}</p>
+            <p className="task__title">{createdUrgentCard[12]}</p>
+            <p className="task__description">{createdUrgentCard[13]}</p>
           </div>  
       ) : null}
-      {createCard[14] ? (
+      {createdUrgentCard[14] ? (
           <div className="task">
-            <p className="task__title">{createCard[14]}</p>
-            <p className="task__description">{createCard[15]}</p>
+            <p className="task__title">{createdUrgentCard[14]}</p>
+            <p className="task__description">{createdUrgentCard[15]}</p>
           </div>  
       ) : null}
-      {createCard[16] ? (
+      {createdUrgentCard[16] ? (
           <div className="task">
-            <p className="task__title">{createCard[16]}</p>
-            <p className="task__description">{createCard[17]}</p>
+            <p className="task__title">{createdUrgentCard[16]}</p>
+            <p className="task__description">{createdUrgentCard[17]}</p>
           </div>  
       ) : null}
-      {createCard[18] ? (
+      {createdUrgentCard[18] ? (
           <div className="task">
-            <p className="task__title">{createCard[18]}</p>
-            <p className="task__description">{createCard[19]}</p>
+            <p className="task__title">{createdUrgentCard[18]}</p>
+            <p className="task__description">{createdUrgentCard[19]}</p>
           </div>  
       ) : null}
-      {createCard[20] ? (
+      {createdUrgentCard[20] ? (
           <div className="task">
-            <p className="task__title">{createCard[20]}</p>
-            <p className="task__description">{createCard[21]}</p>
+            <p className="task__title">{createdUrgentCard[20]}</p>
+            <p className="task__description">{createdUrgentCard[21]}</p>
           </div>  
       ) : null}
     </div>
