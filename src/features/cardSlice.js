@@ -8,6 +8,7 @@ export const cardSlice = createSlice({
     createdUrgentCard: [],
     remainingCard: [],
     eventsCard: [],
+    notesCard: [],
     task: {
       title: '',
       description: '',
@@ -64,6 +65,17 @@ export const cardSlice = createSlice({
       };
       state.drawCreateCard = true;
     },
+    createNotes: (state, action) => {
+      const { title, description } = state.task;
+      state.notesCard.push(title, description);
+
+      // Reset states.
+      state.task = {
+        title: '',
+        description: '',
+      };
+      state.drawCreateCard = true;
+    },
     // I define the behaviour of each gearbox launched
     // by an action and configure the new status.
     changeFormValue: (state, action) => {
@@ -81,6 +93,7 @@ export const {
   createUrgentTask,
   createRemainingTask,
   createNextEvents,
+  createNotes,
   changeFormValue,
 } = cardSlice.actions;
 
@@ -89,6 +102,7 @@ export const selectCreateCard = (state) => state.card.createCard;
 export const selectCreatedUrgentCard = (state) => state.card.createdUrgentCard;
 export const selectCreatedRemainingCard = (state) => state.card.remainingCard;
 export const selectCreatedeventsCard = (state) => state.card.eventsCard;
+export const selectCreatedNotesCard = (state) => state.card.notesCard;
 
 
 export const selectTitle = (state) => state.card.task.title;
