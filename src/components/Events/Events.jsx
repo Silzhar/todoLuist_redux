@@ -13,7 +13,7 @@ import {
 import './Events.scss'
 
 export function Events() {
-    const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
   const createdEventsCard = useSelector(selectCreatedeventsCard)
   const title = useSelector(selectTitle)
