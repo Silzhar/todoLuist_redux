@@ -10,10 +10,12 @@
 
     > input {
       width: 100%;
+      height: 4rem;
       padding: 0.5rem;
       margin: 0.4rem;
       font-size: 1rem;
       background-color: transparent;
+      border-radius: 0.40rem;
       border: 1px solid rgb(193, 207, 146);
       box-shadow: 6px 9px 9px -3px #fdfdfdbf;
 
@@ -58,7 +60,7 @@
         color: #ff00c8;
       }
     }
-  }
+}
   
 
 .task {
