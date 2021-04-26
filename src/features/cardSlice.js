@@ -13,9 +13,6 @@ export const cardSlice = createSlice({
       title: '',
       description: '',
     },
-    title: '',
-    description: '',
-
     drawCreateCard: false,
   },
 
@@ -84,6 +81,10 @@ export const cardSlice = createSlice({
 
       state.task[name] = value;
     },
+    deleteCard: (state, action) => {
+      // const { payload } = action;
+      state.createdUrgentCard.splice(action.payload)
+    },
   },
 });
 
@@ -94,6 +95,7 @@ export const {
   createRemainingTask,
   createNextEvents,
   createNotes,
+  deleteCard,
   changeFormValue,
 } = cardSlice.actions;
 

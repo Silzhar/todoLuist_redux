@@ -8,6 +8,7 @@ import {
   // Actions.
   createUrgentTask,
   changeFormValue,
+  deleteCard
 } from '../../features/cardSlice'
 
 
@@ -24,7 +25,7 @@ export function UrgentTask() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    dispatch(createUrgentTask());
+    dispatch(createUrgentTask())
   }
   function handleChangeInput(ev) {
     dispatch(
@@ -33,6 +34,9 @@ export function UrgentTask() {
         value: ev.target.value,
       })
     )
+  }
+  function deleteTask(title, desciption) {
+    dispatch(deleteCard(title, desciption))
   }
 
   return (
@@ -74,6 +78,8 @@ export function UrgentTask() {
         <div className="task">
             <p className="task__title">{createdUrgentCard[0]}</p>
             <p className="task__description">{createdUrgentCard[1]}</p>
+            <button type="submit" onClick={() => deleteTask(0,1)}
+            className="CardInput__delete-button">Eliminar</button>
         </div>) : null }
       {createdUrgentCard[2] ? (
           <div className="task">
