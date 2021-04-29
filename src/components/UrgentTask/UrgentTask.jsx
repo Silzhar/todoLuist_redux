@@ -38,9 +38,9 @@ export function UrgentTask() {
   // function deleteTask(title, desciption) {
   //   dispatch(deleteCard(title, desciption))
   // }
-  // function deleteTask(title, desciption) {
-  //   dispatch(deleteCard(title, desciption))
-  // }
+  function deleteTask(index, elements) {
+    dispatch(deleteCard(index, elements))
+  }
 
   return (
     <div>
@@ -81,14 +81,14 @@ export function UrgentTask() {
         <div className="task">
             <p className="task__title">{createdUrgentCard[0]}</p>
             <p className="task__description">{createdUrgentCard[1]}</p>
-            <button type="submit" onClick={() => dispatch(deleteCard(0,2))}
+            <button type="submit" onClick={() => (deleteTask(0,2))}
             className="CardInput__delete-button">Eliminar</button>
         </div>) : null }
       {createdUrgentCard[2] ? (
           <div className="task">
             <p className="task__title">{createdUrgentCard[2]}</p>
             <p className="task__description">{createdUrgentCard[3]}</p>
-            <button type="submit" onClick={() => dispatch(deleteCard(2,2))}
+            <button type="submit" onClick={() => (deleteTask(2,2))}
             className="CardInput__delete-button">Eliminar</button>
           </div>  
       ) : null}
@@ -96,7 +96,7 @@ export function UrgentTask() {
           <div className="task">
             <p className="task__title">{createdUrgentCard[4]}</p>
             <p className="task__description">{createdUrgentCard[5]}</p>
-            <button type="submit" onClick={() => dispatch(deleteCard(4,2))}
+            <button type="submit" onClick={() => (deleteTask(4,2))}
             className="CardInput__delete-button">Eliminar</button>
           </div>  
       ) : null}
@@ -104,7 +104,7 @@ export function UrgentTask() {
           <div className="task">
             <p className="task__title">{createdUrgentCard[6]}</p>
             <p className="task__description">{createdUrgentCard[7]}</p>
-            <button type="submit" onClick={() => dispatch(deleteCard(6,2))}
+            <button type="submit" onClick={() => (deleteTask(6,2))}
             className="CardInput__delete-button">Eliminar</button>
           </div>  
       ) : null}
@@ -112,7 +112,7 @@ export function UrgentTask() {
           <div className="task">
             <p className="task__title">{createdUrgentCard[8]}</p>
             <p className="task__description">{createdUrgentCard[9]}</p>
-            <button type="submit" onClick={() => dispatch(deleteCard(8,2))}
+            <button type="submit" onClick={() => (deleteTask(8,2))}
             className="CardInput__delete-button">Eliminar</button>
           </div>  
       ) : null}
@@ -120,7 +120,7 @@ export function UrgentTask() {
           <div className="task">
             <p className="task__title">{createdUrgentCard[10]}</p>
             <p className="task__description">{createdUrgentCard[11]}</p>
-            <button type="submit" onClick={() => dispatch(deleteCard(10,2))}
+            <button type="submit" onClick={() => (deleteTask(10,2))}
             className="CardInput__delete-button">Eliminar</button>
           </div>  
       ) : null}
@@ -128,7 +128,7 @@ export function UrgentTask() {
           <div className="task">
             <p className="task__title">{createdUrgentCard[12]}</p>
             <p className="task__description">{createdUrgentCard[13]}</p>
-            <button type="submit" onClick={() => dispatch(deleteCard(12,2))}
+            <button type="submit" onClick={() => (deleteTask(12,2))}
             className="CardInput__delete-button">Eliminar</button>
           </div>  
       ) : null}
@@ -136,7 +136,7 @@ export function UrgentTask() {
           <div className="task">
             <p className="task__title">{createdUrgentCard[14]}</p>
             <p className="task__description">{createdUrgentCard[15]}</p>
-            <button type="submit" onClick={() => dispatch(deleteCard(14,2))}
+            <button type="submit" onClick={() => (deleteTask(14,2))}
             className="CardInput__delete-button">Eliminar</button>
           </div>  
       ) : null}
@@ -144,7 +144,7 @@ export function UrgentTask() {
           <div className="task">
             <p className="task__title">{createdUrgentCard[16]}</p>
             <p className="task__description">{createdUrgentCard[17]}</p>
-            <button type="submit" onClick={() => dispatch(deleteCard(16,2))}
+            <button type="submit" onClick={() => (deleteTask(16,2))}
             className="CardInput__delete-button">Eliminar</button>
           </div>  
       ) : null}
@@ -152,7 +152,7 @@ export function UrgentTask() {
           <div className="task">
             <p className="task__title">{createdUrgentCard[18]}</p>
             <p className="task__description">{createdUrgentCard[19]}</p>
-            <button type="submit" onClick={() => dispatch(deleteCard(18,2))}
+            <button type="submit" onClick={() => (deleteTask(18,2))}
             className="CardInput__delete-button">Eliminar</button>
           </div>  
       ) : null}
@@ -160,7 +160,7 @@ export function UrgentTask() {
           <div className="task">
             <p className="task__title">{createdUrgentCard[20]}</p>
             <p className="task__description">{createdUrgentCard[21]}</p>
-            <button type="submit" onClick={() => dispatch(deleteCard(20,2))}
+            <button type="submit" onClick={() => (deleteTask(20,2))}
             className="CardInput__delete-button">Eliminar</button>
           </div>  
       ) : null}
