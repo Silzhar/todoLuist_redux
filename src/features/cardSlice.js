@@ -25,53 +25,53 @@ export const cardSlice = createSlice({
       state.task = {
         title: '',
         description: '',
-      };
+      }
       state.list.length = 0;
       state.drawCreateCard = true;
     },
     createUrgentTask: (state, action) => {
       const { title, description } = state.task;
-      state.createdUrgentCard.push(title, description);
+      state.createdUrgentCard.push(title, description)
 
       // Reset states.
       state.task = {
         title: '',
         description: '',
-      };
-      state.drawCreateCard = true;
+      }
+      state.drawCreateCard = true
     },
     createRemainingTask: (state, action) => {
       const { title, description } = state.task;
-      state.remainingCard.push(title, description);
+      state.remainingCard.push(title, description)
 
       // Reset states.
       state.task = {
         title: '',
         description: '',
-      };
+      }
       state.drawCreateCard = true;
     },
     createNextEvents: (state, action) => {
-      const { title, description } = state.task;
-      state.eventsCard.push(title, description);
+      const { title, description } = state.task
+      state.eventsCard.push(title, description)
 
       // Reset states.
       state.task = {
         title: '',
         description: '',
-      };
-      state.drawCreateCard = true;
+      }
+      state.drawCreateCard = true
     },
     createNotes: (state, action) => {
-      const { title, description } = state.task;
-      state.notesCard.push(title, description);
+      const { title, description } = state.task
+      state.notesCard.push(title, description)
 
       // Reset states.
       state.task = {
         title: '',
         description: '',
-      };
-      state.drawCreateCard = true;
+      }
+      state.drawCreateCard = true
     },
     // I define the behaviour of each gearbox launched
     // by an action and configure the new status.
@@ -85,7 +85,7 @@ export const cardSlice = createSlice({
       state.createdUrgentCard.splice(action.payload)
     },
   },
-});
+})
 
 // Actions.
 export const {
@@ -96,17 +96,17 @@ export const {
   createNotes,
   deleteCard,
   changeFormValue,
-} = cardSlice.actions;
+} = cardSlice.actions
 
 //Selectors.
-export const selectCreateCard = (state) => state.card.createCard;
-export const selectCreatedUrgentCard = (state) => state.card.createdUrgentCard;
-export const selectCreatedRemainingCard = (state) => state.card.remainingCard;
-export const selectCreatedeventsCard = (state) => state.card.eventsCard;
-export const selectCreatedNotesCard = (state) => state.card.notesCard;
+export const selectCreateCard = (state) => state.card.createCard
+export const selectCreatedUrgentCard = (state) => state.card.createdUrgentCard
+export const selectCreatedRemainingCard = (state) => state.card.remainingCard
+export const selectCreatedeventsCard = (state) => state.card.eventsCard
+export const selectCreatedNotesCard = (state) => state.card.notesCard
 
 
 export const selectTitle = (state) => state.card.task.title;
 export const selectDescription = (state) => state.card.task.description;
 
-export default cardSlice.reducer;
+export default cardSlice.reducer
