@@ -35,12 +35,12 @@ export function UrgentTask() {
       })
     )
   }
-  // function deleteTask(title, desciption) {
-  //   dispatch(deleteCard(title, desciption))
-  // }
-  function deleteTask(index, elements) {
-    dispatch(deleteCard(index, elements))
+  function deleteTask(title, desciption) {
+    dispatch(deleteCard(title, desciption))
   }
+  // function deleteTask(index, elements) {
+  //   dispatch(deleteCard(index, elements))
+  // }
 
   return (
     <div>
@@ -66,7 +66,7 @@ export function UrgentTask() {
         <div className="CardInput__buttons">
           <button
             type="submit"
-            onClick={() => dispatch(createUrgentTask())}
+            onClick={() => (createUrgentTask())}
             className="CardInput__add-button"
           >
             Nueva tarea

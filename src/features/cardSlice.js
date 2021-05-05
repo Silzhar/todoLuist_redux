@@ -82,7 +82,8 @@ export const cardSlice = createSlice({
       state.task[name] = value;
     },
     deleteCard: (state, action) => {
-      state.createdUrgentCard.slice(action.payload)
+      // const id = action.payload.id
+      state.createdUrgentCard.splice(action.payload)
     },
   },
 })
